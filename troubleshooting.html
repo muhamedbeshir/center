@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حل المشاكل - دليل استخدام نظام إدارة المركز التعليمي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/troubleshooting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tools"></i>
+                    <h1>حل المشاكل والدعم الفني</h1>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-light">
+                        <i class="fas fa-home"></i> الصفحة الرئيسية
+                    </a>
+                    <a href="modules.html" class="btn btn-light">
+                        <i class="fas fa-puzzle-piece"></i> الموديولات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Help Section -->
+    <section class="quick-help">
+        <div class="container">
+            <h2><i class="fas fa-life-ring"></i> المساعدة السريعة</h2>
+            <div class="quick-help-grid">
+                <div class="help-card urgent">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>مشكلة عاجلة</h3>
+                    <p>النظام لا يعمل أو توقف مفاجئ</p>
+                    <button onclick="showUrgentHelp()" class="btn btn-danger">مساعدة فورية</button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>سؤال سريع</h3>
+                    <p>أحتاج مساعدة في استخدام إحدى الميزات</p>
+                    <button onclick="showQuickFAQ()" class="btn btn-primary">الأسئلة الشائعة</button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-bug"></i>
+                    <h3>بلاغ خطأ</h3>
+                    <p>وجدت خطأ في النظام أريد الإبلاغ عنه</p>
+                    <button onclick="reportBug()" class="btn btn-warning">إبلاغ عن خطأ</button>
+                </div>
+                <div class="help-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>اقتراح تحسين</h3>
+                    <p>لدي فكرة لتحسين النظام</p>
+                    <button onclick="suggestImprovement()" class="btn btn-success">إرسال اقتراح</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="troubleshooting-layout">
+                <!-- Sidebar -->
+                <aside class="troubleshooting-sidebar">
+                    <div class="sidebar-content">
+                        <h3>أقسام المساعدة</h3>
+                        
+                        <div class="sidebar-section">
+                            <h4><i class="fas fa-exclamation-circle"></i> المشاكل الشائعة</h4>
+                            <ul>
+                                <li><a href="#login-issues">مشاكل تسجيل الدخول</a></li>
+                                <li><a href="#attendance-issues">مشاكل الحضور</a></li>
+                                <li><a href="#payment-issues">مشاكل المدفوعات</a></li>
+                                <li><a href="#whatsapp-issues">مشاكل الواتساب</a></li>
+                                <li><a href="#printing-issues">مشاكل الطباعة</a></li>
+                                <li><a href="#performance-issues">مشاكل الأداء</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4><i class="fas fa-cogs"></i> الإعدادات</h4>
+                            <ul>
+                                <li><a href="#system-settings">إعدادات النظام</a></li>
+                                <li><a href="#user-permissions">صلاحيات المستخدمين</a></li>
+                                <li><a href="#backup-restore">النسخ الاحتياطي</a></li>
+                                <li><a href="#security-settings">إعدادات الأمان</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4><i class="fas fa-phone"></i> التواصل</h4>
+                            <ul>
+                                <li><a href="#contact-support">الدعم الفني</a></li>
+                                <li><a href="#training-request">طلب تدريب</a></li>
+                                <li><a href="#feature-request">طلب ميزة جديدة</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="troubleshooting-content">
+                    
+                    <!-- Login Issues -->
+                    <section id="login-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-sign-in-alt"></i> مشاكل تسجيل الدخول</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>نسيت كلمة المرور</h3>
+                            <div class="solution">
+                                <h4>الحل:</h4>
+                                <ol>
+                                    <li>في صفحة تسجيل الدخول، اضغط على "نسيت كلمة المرور"</li>
+                                    <li>أدخل اسم المستخدم أو البريد الإلكتروني</li>
+                                    <li>تحقق من بريدك الإلكتروني للحصول على رابط إعادة التعيين</li>
+                                    <li>اتبع التعليمات في الرسالة لإنشاء كلمة مرور جديدة</li>
+                                </ol>
+                                <div class="note">
+                                    <i class="fas fa-info-circle"></i>
+                                    <strong>ملاحظة:</strong> إذا لم تصلك الرسالة، تحقق من مجلد الرسائل المهملة أو تواصل مع الإدارة.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>رسالة "اسم المستخدم أو كلمة المرور غير صحيحة"</h3>
+                            <div class="solution">
+                                <h4>الحلول المحتملة:</h4>
+                                <ul>
+                                    <li>تأكد من كتابة اسم المستخدم بالطريقة الصحيحة (انتبه للأحرف الكبيرة والصغيرة)</li>
+                                    <li>تحقق من تشغيل مفتاح Caps Lock</li>
+                                    <li>جرب نسخ ولصق اسم المستخدم وكلمة المرور</li>
+                                    <li>امسح ذاكرة المتصفح (Cache) والكوكيز</li>
+                                    <li>جرب متصفح آخر أو وضع التصفح الخاص</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>تم قفل الحساب</h3>
+                            <div class="solution">
+                                <h4>الحل:</h4>
+                                <p>إذا تم قفل حسابك بسبب عدة محاولات دخول خاطئة:</p>
+                                <ol>
+                                    <li>انتظر 15 دقيقة ثم حاول مرة أخرى</li>
+                                    <li>إذا استمرت المشكلة، تواصل مع مدير النظام</li>
+                                    <li>قد تحتاج لإثبات هويتك لفتح الحساب</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Attendance Issues -->
+                    <section id="attendance-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-calendar-check"></i> مشاكل نظام الحضور</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>لا يمكن بدء جلسة حضور جديدة</h3>
+                            <div class="solution">
+                                <h4>تحقق من:</h4>
+                                <ul>
+                                    <li>أن المجموعة لها جدول في هذا اليوم</li>
+                                    <li>عدم وجود جلسة حضور مفتوحة بالفعل</li>
+                                    <li>أن لديك صلاحية تسجيل الحضور</li>
+                                    <li>أن الوقت الحالي ضمن وقت الحصة</li>
+                                </ul>
+                                <div class="fix-steps">
+                                    <h4>خطوات الإصلاح:</h4>
+                                    <ol>
+                                        <li>تحقق من الجدول الزمني للمجموعة</li>
+                                        <li>أغلق أي جلسات مفتوحة سابقة</li>
+                                        <li>حدث الصفحة وحاول مرة أخرى</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>الطلاب لا يظهرون في قائمة الحضور</h3>
+                            <div class="solution">
+                                <h4>الأسباب المحتملة:</h4>
+                                <ul>
+                                    <li>الطلاب غير مسجلين في هذه المجموعة</li>
+                                    <li>تم إلغاء تسجيل الطلاب مؤقتاً</li>
+                                    <li>مشكلة في تحديث البيانات</li>
+                                </ul>
+                                <h4>الحل:</h4>
+                                <ol>
+                                    <li>تحقق من تسجيل الطلاب في المجموعة</li>
+                                    <li>راجع حالة الطلاب (نشط/غير نشط)</li>
+                                    <li>حدث قائمة الطلاب في إعدادات المجموعة</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Payment Issues -->
+                    <section id="payment-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-money-bill-wave"></i> مشاكل نظام المدفوعات</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>الرصيد لا يظهر بشكل صحيح</h3>
+                            <div class="solution">
+                                <h4>خطوات التحقق:</h4>
+                                <ol>
+                                    <li>راجع جميع المدفوعات المسجلة للطالب</li>
+                                    <li>تحقق من تواريخ المدفوعات والفترات المغطاة</li>
+                                    <li>تأكد من عدم وجود مدفوعات مكررة</li>
+                                    <li>راجع إعدادات أسعار المجموعات</li>
+                                </ol>
+                                <div class="warning">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <strong>تحذير:</strong> لا تقم بتعديل الأرصدة يدوياً إلا بعد التأكد من السبب.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>خطأ في حساب نصيب المعلم</h3>
+                            <div class="solution">
+                                <h4>الحل:</h4>
+                                <ol>
+                                    <li>تحقق من إعدادات نسبة المعلم في المجموعة</li>
+                                    <li>راجع أنواع المدفوعات المحتسبة</li>
+                                    <li>تأكد من ضبط فترة الحساب بشكل صحيح</li>
+                                    <li>أعد حساب المستحقات من تقرير المعلمين</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- WhatsApp Issues -->
+                    <section id="whatsapp-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fab fa-whatsapp"></i> مشاكل الواتساب</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>الواتساب غير متصل</h3>
+                            <div class="solution">
+                                <h4>خطوات الإصلاح:</h4>
+                                <ol>
+                                    <li>تحقق من اتصال الإنترنت</li>
+                                    <li>تأكد من أن الهاتف المربوط مشحون ومتصل</li>
+                                    <li>أعد مسح رمز QR من إعدادات الواتساب</li>
+                                    <li>أعد تشغيل خدمة الواتساب من لوحة التحكم</li>
+                                </ol>
+                                <div class="tip">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <strong>نصيحة:</strong> استخدم هاتف مخصص للمركز وتأكد من عدم استخدامه لأغراض شخصية.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>الرسائل لا تصل لأولياء الأمور</h3>
+                            <div class="solution">
+                                <h4>تحقق من:</h4>
+                                <ul>
+                                    <li>صحة أرقام الهواتف المحفوظة</li>
+                                    <li>أن الأرقام تتضمن كود البلد</li>
+                                    <li>عدم حظر رقم المركز من قبل أولياء الأمور</li>
+                                    <li>حالة إرسال الرسائل في سجل الواتساب</li>
+                                </ul>
+                                <h4>الحل:</h4>
+                                <ol>
+                                    <li>اختبر الإرسال برسالة تجريبية</li>
+                                    <li>تحديث أرقام الهواتف</li>
+                                    <li>استخدام رسائل SMS كبديل</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Printing Issues -->
+                    <section id="printing-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-print"></i> مشاكل الطباعة</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>البطاقات الطلابية لا تطبع بشكل صحيح</h3>
+                            <div class="solution">
+                                <h4>خطوات الإصلاح:</h4>
+                                <ol>
+                                    <li>تحقق من إعدادات الطابعة (حجم الورق، الاتجاه)</li>
+                                    <li>استخدم ورق مقوى مناسب</li>
+                                    <li>اضبط جودة الطباعة على "عالية"</li>
+                                    <li>تأكد من وجود حبر كافي</li>
+                                    <li>جرب معاينة الطباعة قبل البدء</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>التقارير لا تظهر بالتنسيق المطلوب</h3>
+                            <div class="solution">
+                                <h4>الحل:</h4>
+                                <ol>
+                                    <li>استخدم متصفح Chrome أو Firefox للطباعة</li>
+                                    <li>تأكد من تحديد "Save as PDF" إذا كنت تريد ملف PDF</li>
+                                    <li>اضبط هوامش الصفحة إلى "Default"</li>
+                                    <li>تأكد من تفعيل "Background graphics"</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Performance Issues -->
+                    <section id="performance-issues" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-tachometer-alt"></i> مشاكل الأداء</h2>
+                        </div>
+                        
+                        <div class="problem-item">
+                            <h3>النظام بطيء في التحميل</h3>
+                            <div class="solution">
+                                <h4>تحسين الأداء:</h4>
+                                <ol>
+                                    <li>امسح ذاكرة المتصفح (Cache)</li>
+                                    <li>أغلق التبويبات الأخرى غير المهمة</li>
+                                    <li>تحقق من سرعة الإنترنت</li>
+                                    <li>استخدم متصفح محدث</li>
+                                    <li>تجنب تشغيل برامج أخرى كثيفة الموارد</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="problem-item">
+                            <h3>انقطاع في الاتصال أثناء العمل</h3>
+                            <div class="solution">
+                                <h4>الوقاية:</h4>
+                                <ul>
+                                    <li>احفظ عملك بانتظام</li>
+                                    <li>تجنب ترك النظام مفتوحاً لفترات طويلة دون استخدام</li>
+                                    <li>تحقق من استقرار الإنترنت</li>
+                                </ul>
+                                <h4>عند الانقطاع:</h4>
+                                <ol>
+                                    <li>سجل دخول مرة أخرى</li>
+                                    <li>تحقق من آخر البيانات المحفوظة</li>
+                                    <li>أعد إدخال البيانات المفقودة إن وجدت</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Contact Support -->
+                    <section id="contact-support" class="problem-section">
+                        <div class="problem-header">
+                            <h2><i class="fas fa-headset"></i> التواصل مع الدعم الفني</h2>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <p>إذا لم تجد الحل لمشكلتك في هذا الدليل، يمكنك التواصل مع فريق الدعم الفني:</p>
+                            
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <i class="fas fa-phone"></i>
+                                    <h4>الهاتف</h4>
+                                    <p>متاح 24/7 للمشاكل العاجلة</p>
+                                    <strong>+966 XX XXX XXXX</strong>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <i class="fas fa-envelope"></i>
+                                    <h4>البريد الإلكتروني</h4>
+                                    <p>للاستفسارات والمشاكل غير العاجلة</p>
+                                    <strong>support@example.com</strong>
+                                </div>
+                                
+                                <div class="contact-method">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <h4>واتساب</h4>
+                                    <p>دردشة مباشرة مع فريق الدعم</p>
+                                    <strong>+966 XX XXX XXXX</strong>
+                                </div>
+                            </div>
+                            
+                            <div class="before-contact">
+                                <h4>قبل التواصل، يرجى تجهيز:</h4>
+                                <ul>
+                                    <li>وصف تفصيلي للمشكلة</li>
+                                    <li>خطوات إعادة تكرار المشكلة</li>
+                                    <li>لقطات شاشة للخطأ إن أمكن</li>
+                                    <li>نوع المتصفح والجهاز المستخدم</li>
+                                    <li>وقت حدوث المشكلة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Emergency Help Modal -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content emergency">
+            <div class="modal-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> مساعدة عاجلة</h2>
+                <button class="modal-close" onclick="closeEmergencyModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="emergency-steps">
+                    <h3>للمشاكل العاجلة، اتبع هذه الخطوات:</h3>
+                    
+                    <div class="step urgent-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>تحقق من الأساسيات</h4>
+                            <ul>
+                                <li>تأكد من اتصال الإنترنت</li>
+                                <li>جرب تحديث الصفحة (F5)</li>
+                                <li>امسح ذاكرة المتصفح</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="step urgent-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>جرب متصفح آخر</h4>
+                            <p>اختبر النظام في متصفح مختلف أو في وضع التصفح الخاص</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step urgent-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>تواصل فوراً</h4>
+                            <div class="emergency-contacts">
+                                <a href="tel:+966XXXXXXXX" class="emergency-contact">
+                                    <i class="fas fa-phone"></i>
+                                    <span>اتصال مباشر</span>
+                                </a>
+                                <a href="https://wa.me/966XXXXXXXX" class="emergency-contact">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>واتساب عاجل</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="emergency-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>مهم:</strong> في حالة توقف النظام تماماً، تأكد من الاحتفاظ بنسخة من البيانات المهمة وتواصل مع الدعم فوراً.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/troubleshooting.js"></script>
+</body>
+</html>

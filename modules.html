@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موديولات النظام - دليل استخدام نظام إدارة المركز التعليمي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>موديولات النظام</h1>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-light">
+                        <i class="fas fa-home"></i> الصفحة الرئيسية
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="modules-intro">
+                <h2>موديولات النظام الشامل</h2>
+                <p>تعرف على جميع موديولات النظام ومميزاتها وطريقة استخدامها بالتفصيل</p>
+            </div>
+
+            <!-- Module Grid -->
+            <div class="modules-grid">
+                
+                <!-- Students Module -->
+                <div class="module-card" data-module="students">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>إدارة الطلاب</h3>
+                        <span class="module-status">أساسي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>نظام شامل لإدارة بيانات الطلاب وتسجيلهم في المجموعات والمتابعة الأكاديمية</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تسجيل الطلاب الجدد مع بياناتهم الكاملة</li>
+                            <li><i class="fas fa-check"></i> إدارة أرقام أولياء الأمور والطوارئ</li>
+                            <li><i class="fas fa-check"></i> ربط الطلاب بالمجموعات والصفوف</li>
+                            <li><i class="fas fa-check"></i> طباعة البطاقات الطلابية مع الباركود</li>
+                            <li><i class="fas fa-check"></i> استيراد البيانات من ملفات Excel</li>
+                            <li><i class="fas fa-check"></i> تصدير تقارير شاملة</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('students')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Groups Module -->
+                <div class="module-card" data-module="groups">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>إدارة المجموعات</h3>
+                        <span class="module-status">أساسي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إنشاء وإدارة المجموعات الدراسية مع الجداول الزمنية والأسعار وتوزيع الطلاب</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> إنشاء مجموعات لكل مادة ومعلم</li>
+                            <li><i class="fas fa-check"></i> إعداد الجداول الزمنية الأسبوعية</li>
+                            <li><i class="fas fa-check"></i> تحديد أسعار الاشتراكات</li>
+                            <li><i class="fas fa-check"></i> ربط القاعات والمعلمين</li>
+                            <li><i class="fas fa-check"></i> إدارة سعة المجموعات</li>
+                            <li><i class="fas fa-check"></i> متابعة نشاط المجموعات</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('groups')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Teachers Module -->
+                <div class="module-card" data-module="teachers">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>إدارة المعلمين</h3>
+                        <span class="module-status">أساسي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إدارة شاملة لبيانات المعلمين والمواد التي يدرسونها ومجموعاتهم</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تسجيل المعلمين وبياناتهم</li>
+                            <li><i class="fas fa-check"></i> ربط المعلمين بالمواد المتخصصة</li>
+                            <li><i class="fas fa-check"></i> إدارة مجموعات كل معلم</li>
+                            <li><i class="fas fa-check"></i> متابعة أداء المعلمين</li>
+                            <li><i class="fas fa-check"></i> حساب مستحقات المعلمين</li>
+                            <li><i class="fas fa-check"></i> تقارير المعلمين الشهرية</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('teachers')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Attendance Module -->
+                <div class="module-card" data-module="attendance">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>نظام الحضور والغياب</h3>
+                        <span class="module-status">متقدم</span>
+                    </div>
+                    <div class="module-description">
+                        <p>نظام متطور لتسجيل ومتابعة حضور الطلاب مع إرسال تقارير فورية لأولياء الأمور</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تسجيل الحضور اليومي للمجموعات</li>
+                            <li><i class="fas fa-check"></i> إدارة جلسات الحضور المتعددة</li>
+                            <li><i class="fas fa-check"></i> إضافة ملاحظات للطلاب</li>
+                            <li><i class="fas fa-check"></i> إرسال تقارير عبر الواتساب</li>
+                            <li><i class="fas fa-check"></i> احصائيات الحضور والغياب</li>
+                            <li><i class="fas fa-check"></i> تقارير مفصلة قابلة للطباعة</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('attendance')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Payments Module -->
+                <div class="module-card" data-module="payments">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>نظام المدفوعات</h3>
+                        <span class="module-status">متقدم</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إدارة مالية شاملة للمدفوعات والرسوم مع متابعة المستحقات والتذكيرات</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تسجيل المدفوعات المتنوعة</li>
+                            <li><i class="fas fa-check"></i> متابعة المستحقات والديون</li>
+                            <li><i class="fas fa-check"></i> حساب نصيب المركز والمعلم</li>
+                            <li><i class="fas fa-check"></i> إصدار إيصالات رقمية</li>
+                            <li><i class="fas fa-check"></i> تقارير مالية شاملة</li>
+                            <li><i class="fas fa-check"></i> تذكيرات الدفع التلقائية</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('payments')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Exams Module -->
+                <div class="module-card" data-module="exams">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>نظام الامتحانات</h3>
+                        <span class="module-status">متقدم</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إدارة الامتحانات والكويزات مع تسجيل الدرجات وإرسال النتائج</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> إنشاء امتحانات للمجموعات</li>
+                            <li><i class="fas fa-check"></i> تسجيل حضور الامتحانات</li>
+                            <li><i class="fas fa-check"></i> إدخال الدرجات والنتائج</li>
+                            <li><i class="fas fa-check"></i> إحصائيات الأداء</li>
+                            <li><i class="fas fa-check"></i> إرسال النتائج للأولياء</li>
+                            <li><i class="fas fa-check"></i> تقارير تفصيلية للنتائج</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('exams')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Books Module -->
+                <div class="module-card" data-module="books">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>إدارة الكتب والأكواد</h3>
+                        <span class="module-status">إضافي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إدارة مخزون الكتب والأكواد التعليمية مع نظام مبيعات متكامل</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> إدارة مخزون الكتب والأكواد</li>
+                            <li><i class="fas fa-check"></i> تسجيل المبيعات والمشتريات</li>
+                            <li><i class="fas fa-check"></i> متابعة الكميات المتاحة</li>
+                            <li><i class="fas fa-check"></i> تقارير المبيعات والأرباح</li>
+                            <li><i class="fas fa-check"></i> حساب نصيب المركز</li>
+                            <li><i class="fas fa-check"></i> قوائم العملاء والمشترين</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('books')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Reports Module -->
+                <div class="module-card" data-module="reports">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>التقارير والإحصائيات</h3>
+                        <span class="module-status">متقدم</span>
+                    </div>
+                    <div class="module-description">
+                        <p>مجموعة شاملة من التقارير والإحصائيات لجميع جوانب النظام</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تقارير الحضور الشاملة</li>
+                            <li><i class="fas fa-check"></i> تقارير المدفوعات والأرباح</li>
+                            <li><i class="fas fa-check"></i> إحصائيات أداء المعلمين</li>
+                            <li><i class="fas fa-check"></i> تقارير الطلاب المفصلة</li>
+                            <li><i class="fas fa-check"></i> تصدير بصيغ متعددة</li>
+                            <li><i class="fas fa-check"></i> جدولة التقارير التلقائية</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('reports')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Module -->
+                <div class="module-card" data-module="whatsapp">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>تكامل الواتساب</h3>
+                        <span class="module-status">متقدم</span>
+                    </div>
+                    <div class="module-description">
+                        <p>نظام متكامل لإرسال الرسائل والتقارير عبر الواتساب لأولياء الأمور</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> ربط الواتساب بالنظام</li>
+                            <li><i class="fas fa-check"></i> إرسال تقارير الحضور تلقائياً</li>
+                            <li><i class="fas fa-check"></i> إشعارات المدفوعات والمستحقات</li>
+                            <li><i class="fas fa-check"></i> رسائل جماعية للإعلانات</li>
+                            <li><i class="fas fa-check"></i> تخصيص قوالب الرسائل</li>
+                            <li><i class="fas fa-check"></i> سجل الرسائل المرسلة</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('whatsapp')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Student Cards Module -->
+                <div class="module-card" data-module="cards">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>البطاقات الطلابية</h3>
+                        <span class="module-status">إضافي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إنشاء وطباعة البطاقات الطلابية مع الباركود للتعريف السريع</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تصميمات متعددة للبطاقات</li>
+                            <li><i class="fas fa-check"></i> إضافة الباركود والصور</li>
+                            <li><i class="fas fa-check"></i> طباعة فردية أو جماعية</li>
+                            <li><i class="fas fa-check"></i> تخصيص بيانات البطاقة</li>
+                            <li><i class="fas fa-check"></i> معاينة قبل الطباعة</li>
+                            <li><i class="fas fa-check"></i> تصدير بصيغ مختلفة</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('cards')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Settings Module -->
+                <div class="module-card" data-module="settings">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>الإعدادات والتخصيص</h3>
+                        <span class="module-status">أساسي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إعدادات شاملة لتخصيص النظام حسب احتياجات المركز</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> إعدادات عامة للنظام</li>
+                            <li><i class="fas fa-check"></i> إدارة المستخدمين والأدوار</li>
+                            <li><i class="fas fa-check"></i> تخصيص الواجهة والألوان</li>
+                            <li><i class="fas fa-check"></i> إعدادات الواتساب والإشعارات</li>
+                            <li><i class="fas fa-check"></i> النسخ الاحتياطية</li>
+                            <li><i class="fas fa-check"></i> سجلات النشاط والأمان</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('settings')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Employees Module -->
+                <div class="module-card" data-module="employees">
+                    <div class="module-header">
+                        <div class="module-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>إدارة الموظفين</h3>
+                        <span class="module-status">إضافي</span>
+                    </div>
+                    <div class="module-description">
+                        <p>إدارة الموظفين وحضورهم ورواتبهم ووظائفهم داخل المركز</p>
+                    </div>
+                    <div class="module-features">
+                        <h4>المميزات الرئيسية:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> تسجيل بيانات الموظفين</li>
+                            <li><i class="fas fa-check"></i> إدارة الوظائف والمسميات</li>
+                            <li><i class="fas fa-check"></i> تسجيل حضور الموظفين</li>
+                            <li><i class="fas fa-check"></i> حساب الرواتب والمستحقات</li>
+                            <li><i class="fas fa-check"></i> تقارير أداء الموظفين</li>
+                            <li><i class="fas fa-check"></i> إدارة الإجازات والعطل</li>
+                        </ul>
+                    </div>
+                    <div class="module-actions">
+                        <button class="btn btn-primary" onclick="showModuleDetails('employees')">
+                            <i class="fas fa-info-circle"></i> التفاصيل
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Module Details Modal -->
+    <div id="moduleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/modules.js"></script>
+</body>
+</html>

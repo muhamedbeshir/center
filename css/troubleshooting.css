@@ -1,0 +1,591 @@
+/* ===========================
+   CSS خاص بصفحة حل المشاكل
+   =========================== */
+
+/* قسم المساعدة السريعة */
+.quick-help {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.quick-help h2 {
+    text-align: center;
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.quick-help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.help-card {
+    background: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.help-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary-color);
+    transition: height var(--transition-base);
+}
+
+.help-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.help-card:hover::before {
+    height: 100%;
+    opacity: 0.1;
+}
+
+.help-card.urgent {
+    border-color: var(--error-color);
+}
+
+.help-card.urgent::before {
+    background: var(--error-color);
+}
+
+.help-card i {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+}
+
+.help-card.urgent i {
+    color: var(--error-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.help-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.help-card p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+/* تخطيط صفحة حل المشاكل */
+.troubleshooting-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+}
+
+.troubleshooting-sidebar {
+    position: sticky;
+    top: 140px;
+    height: fit-content;
+}
+
+.troubleshooting-content {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-2xl);
+}
+
+/* أقسام المشاكل */
+.problem-section {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 2px solid var(--bg-tertiary);
+}
+
+.problem-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.problem-header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.problem-header h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: 0;
+}
+
+/* عناصر المشاكل */
+.problem-item {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.problem-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.problem-item h3 {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background var(--transition-base);
+}
+
+.problem-item h3:hover {
+    background: var(--primary-dark);
+}
+
+.problem-item h3::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: transform var(--transition-base);
+}
+
+.problem-item.expanded h3::after {
+    transform: rotate(180deg);
+}
+
+.solution {
+    padding: var(--spacing-lg);
+    display: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+.problem-item.expanded .solution {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 1000px;
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+}
+
+.solution h4 {
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.solution h4::before {
+    content: '\f0eb';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--success-color);
+}
+
+.solution ol,
+.solution ul {
+    margin: var(--spacing-md) 0;
+    padding-right: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.solution li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.fix-steps {
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+    border-right: 4px solid var(--info-color);
+}
+
+.fix-steps h4 {
+    color: var(--info-color);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ملاحظات وتحذيرات */
+.note,
+.warning,
+.tip {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.note {
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid var(--info-color);
+    color: var(--text-primary);
+}
+
+.note i {
+    color: var(--info-color);
+    margin-top: 2px;
+}
+
+.warning {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--warning-color);
+    color: var(--text-primary);
+}
+
+.warning i {
+    color: var(--warning-color);
+    margin-top: 2px;
+}
+
+.tip {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--success-color);
+    color: var(--text-primary);
+}
+
+.tip i {
+    color: var(--success-color);
+    margin-top: 2px;
+}
+
+/* معلومات التواصل */
+.contact-info {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.contact-method {
+    background: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.contact-method:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-method i {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-method h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-method p {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-method strong {
+    color: var(--primary-color);
+    font-size: var(--font-size-lg);
+}
+
+.before-contact {
+    background: var(--bg-primary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-xl);
+    text-align: right;
+}
+
+.before-contact h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.before-contact ul {
+    color: var(--text-secondary);
+    padding-right: var(--spacing-lg);
+}
+
+.before-contact li {
+    margin-bottom: var(--spacing-xs);
+}
+
+/* مودال المساعدة العاجلة */
+.modal.emergency .modal-content {
+    border-top: 5px solid var(--error-color);
+    max-width: 600px;
+}
+
+.modal.emergency .modal-header {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
+}
+
+.modal.emergency .modal-header h2 i {
+    color: var(--error-color);
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.5; }
+}
+
+.emergency-steps {
+    margin-bottom: var(--spacing-xl);
+}
+
+.emergency-steps h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.urgent-step {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    border-right: 4px solid var(--error-color);
+}
+
+.urgent-step .step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--error-color);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+}
+
+.urgent-step .step-content h4 {
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.urgent-step .step-content ul {
+    margin: 0;
+    padding-right: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.urgent-step .step-content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.emergency-contacts {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.emergency-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--error-color);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.emergency-contact:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.emergency-note {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--error-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.emergency-note i {
+    color: var(--error-color);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* أزرار متنوعة */
+.btn-danger {
+    background: linear-gradient(135deg, var(--error-color), #dc2626);
+    color: var(--text-light);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, var(--warning-color), #d97706);
+    color: var(--text-light);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #d97706, #b45309);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: var(--text-light);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* الاستجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .troubleshooting-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .troubleshooting-sidebar {
+        position: static;
+        order: 2;
+    }
+    
+    .troubleshooting-content {
+        order: 1;
+        padding: var(--spacing-lg);
+    }
+    
+    .quick-help-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .emergency-contacts {
+        flex-direction: column;
+    }
+    
+    .urgent-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .urgent-step .step-number {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .problem-item h3 {
+        font-size: var(--font-size-base);
+        padding: var(--spacing-md);
+    }
+    
+    .solution {
+        padding: var(--spacing-md);
+    }
+    
+    .troubleshooting-content {
+        padding: var(--spacing-md);
+    }
+    
+    .contact-method {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal.emergency .modal-content {
+        width: 95%;
+        margin: var(--spacing-md);
+    }
+}

@@ -1,0 +1,452 @@
+/* ===========================
+   CSS خاص بصفحة الموديولات
+   =========================== */
+
+/* مقدمة الموديولات */
+.modules-intro {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    margin-bottom: var(--spacing-2xl);
+    border-radius: var(--border-radius-xl);
+}
+
+.modules-intro h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.modules-intro p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* شبكة الموديولات */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+}
+
+/* بطاقة الموديول */
+.module-card {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.module-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+.module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+/* رأس الموديول */
+.module-header {
+    padding: var(--spacing-xl);
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    position: relative;
+}
+
+.module-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: var(--font-size-2xl);
+    box-shadow: var(--shadow-md);
+    flex-shrink: 0;
+}
+
+.module-header h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.module-status {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+}
+
+.module-status:contains("أساسي") {
+    background: var(--success-color);
+    color: var(--text-light);
+}
+
+.module-card[data-module*="attendance"] .module-status,
+.module-card[data-module*="payments"] .module-status,
+.module-card[data-module*="exams"] .module-status,
+.module-card[data-module*="reports"] .module-status,
+.module-card[data-module*="whatsapp"] .module-status {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.module-card[data-module*="books"] .module-status,
+.module-card[data-module*="cards"] .module-status,
+.module-card[data-module*="employees"] .module-status {
+    background: var(--warning-color);
+    color: var(--text-light);
+}
+
+.module-card[data-module*="students"] .module-status,
+.module-card[data-module*="groups"] .module-status,
+.module-card[data-module*="teachers"] .module-status,
+.module-card[data-module*="settings"] .module-status {
+    background: var(--success-color);
+    color: var(--text-light);
+}
+
+/* وصف الموديول */
+.module-description {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.module-description p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* مميزات الموديول */
+.module-features {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.module-features h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.module-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-features ul li {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.module-features ul li i {
+    color: var(--success-color);
+    font-size: var(--font-size-xs);
+    width: 16px;
+    flex-shrink: 0;
+}
+
+/* أزرار الموديول */
+.module-actions {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* إجراءات الرأس */
+.header-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* المودال */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-xl);
+    max-width: 800px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-tertiary);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--error-color);
+    color: var(--text-light);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    padding: var(--spacing-xl);
+}
+
+/* محتوى تفاصيل الموديول */
+.module-detail-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.module-detail-section h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.module-detail-section h3 i {
+    color: var(--primary-color);
+}
+
+.step-by-step {
+    background: var(--bg-tertiary);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.step-by-step h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.step-by-step ol {
+    margin-right: var(--spacing-lg);
+    color: var(--text-secondary);
+}
+
+.step-by-step ol li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
+}
+
+.tips-section {
+    background: linear-gradient(135deg, var(--info-color), var(--accent-color));
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.tips-section h4 {
+    margin-bottom: var(--spacing-md);
+}
+
+.tips-section ul li {
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.tips-section ul li i {
+    color: var(--warning-color);
+    font-size: var(--font-size-sm);
+}
+
+/* الاستجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .module-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .module-status {
+        position: static;
+        align-self: center;
+        margin-top: var(--spacing-sm);
+    }
+    
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+    
+    .modal-header {
+        padding: var(--spacing-lg);
+    }
+    
+    .modal-body {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .modules-intro {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .modules-intro h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .module-card {
+        margin: 0 var(--spacing-sm);
+    }
+    
+    .module-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xl);
+    }
+    
+    .module-header h3 {
+        font-size: var(--font-size-lg);
+    }
+}
