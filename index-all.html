@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز المساعدة الشامل - نظام إدارة المركز التعليمي</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--accent-color) 100%);
+            color: var(--text-light);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .nav-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 60px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .nav-card {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .nav-card-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .nav-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+        
+        .nav-card p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .nav-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: right;
+        }
+        
+        .nav-card-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .nav-card-features i {
+            color: var(--success-color);
+            width: 16px;
+        }
+        
+        .nav-card-action {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-card-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .quick-actions {
+            background: var(--bg-tertiary);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .quick-actions h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .action-btn {
+            padding: 15px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .action-btn.primary {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .action-btn.success {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        .action-btn.warning {
+            background: var(--warning-color);
+            color: white;
+        }
+        
+        .action-btn.info {
+            background: var(--info-color);
+            color: white;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-cards {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+            
+            .nav-card {
+                padding: 30px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1><i class="fas fa-graduation-cap"></i> مركز المساعدة الشامل</h1>
+                <p>دليلك الكامل لاستخدام نظام إدارة المركز التعليمي بكفاءة وسهولة</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span>موديول رئيسي</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span>ميزة متقدمة</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span>نصيحة وحل</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span>دعم فني</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Cards -->
+    <section class="main-content">
+        <div class="container">
+            <div class="nav-cards">
+                
+                <!-- Main Guide -->
+                <div class="nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h2>الدليل الأساسي</h2>
+                    <p>ابدأ رحلتك مع النظام من هنا. نظرة عامة، البدء السريع، والأسئلة الشائعة</p>
+                    
+                    <ul class="nav-card-features">
+                        <li><i class="fas fa-check"></i> نظرة عامة على النظام</li>
+                        <li><i class="fas fa-check"></i> خطوات البدء السريع</li>
+                        <li><i class="fas fa-check"></i> الأسئلة الشائعة</li>
+                        <li><i class="fas fa-check"></i> نصائح للمبتدئين</li>
+                        <li><i class="fas fa-check"></i> أدوار المستخدمين</li>
+                    </ul>
+                    
+                    <a href="index.html" class="nav-card-action">
+                        <i class="fas fa-arrow-left"></i> ابدأ التعلم
+                    </a>
+                </div>
+
+                <!-- Modules Guide -->
+                <div class="nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h2>دليل الموديولات</h2>
+                    <p>شرح تفصيلي لكل موديول في النظام مع خطوات الاستخدام والأمثلة العملية</p>
+                    
+                    <ul class="nav-card-features">
+                        <li><i class="fas fa-check"></i> 12 موديول مفصل</li>
+                        <li><i class="fas fa-check"></i> خطوات عملية مصورة</li>
+                        <li><i class="fas fa-check"></i> نصائح لكل موديول</li>
+                        <li><i class="fas fa-check"></i> أمثلة واقعية</li>
+                        <li><i class="fas fa-check"></i> دليل طباعة متاح</li>
+                    </ul>
+                    
+                    <a href="modules.html" class="nav-card-action">
+                        <i class="fas fa-arrow-left"></i> استكشف الموديولات
+                    </a>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="nav-card">
+                    <div class="nav-card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2>حل المشاكل</h2>
+                    <p>حلول سريعة للمشاكل الشائعة، دعم فني، وطرق التواصل مع فريق المساعدة</p>
+                    
+                    <ul class="nav-card-features">
+                        <li><i class="fas fa-check"></i> مشاكل شائعة وحلولها</li>
+                        <li><i class="fas fa-check"></i> مساعدة عاجلة فورية</li>
+                        <li><i class="fas fa-check"></i> نماذج بلاغ الأخطاء</li>
+                        <li><i class="fas fa-check"></i> اقتراح التحسينات</li>
+                        <li><i class="fas fa-check"></i> تواصل مع الدعم</li>
+                    </ul>
+                    
+                    <a href="troubleshooting.html" class="nav-card-action">
+                        <i class="fas fa-arrow-left"></i> احصل على المساعدة
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+        <div class="container">
+            <h2><i class="fas fa-rocket"></i> إجراءات سريعة</h2>
+            
+            <div class="action-buttons">
+                <a href="#" onclick="performQuickSearch()" class="action-btn primary">
+                    <i class="fas fa-search"></i> بحث سريع
+                </a>
+                
+                <a href="modules.html#students-module" class="action-btn success">
+                    <i class="fas fa-users"></i> إدارة الطلاب
+                </a>
+                
+                <a href="modules.html#attendance-module" class="action-btn info">
+                    <i class="fas fa-calendar-check"></i> نظام الحضور
+                </a>
+                
+                <a href="modules.html#payments-module" class="action-btn warning">
+                    <i class="fas fa-money-bill-wave"></i> المدفوعات
+                </a>
+                
+                <a href="troubleshooting.html#contact-support" class="action-btn primary">
+                    <i class="fas fa-headset"></i> دعم فني
+                </a>
+                
+                <a href="#" onclick="showPrintOptions()" class="action-btn success">
+                    <i class="fas fa-print"></i> طباعة الأدلة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html">الدليل الأساسي</a></li>
+                        <li><a href="modules.html">دليل الموديولات</a></li>
+                        <li><a href="troubleshooting.html">حل المشاكل</a></li>
+                        <li><a href="README.md" target="_blank">الوثائق التقنية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>الموديولات الأساسية</h3>
+                    <ul>
+                        <li><a href="modules.html#students-module">إدارة الطلاب</a></li>
+                        <li><a href="modules.html#attendance-module">نظام الحضور</a></li>
+                        <li><a href="modules.html#payments-module">المدفوعات</a></li>
+                        <li><a href="modules.html#reports-module">التقارير</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>المساعدة والدعم</h3>
+                    <ul>
+                        <li><a href="troubleshooting.html#urgent-help">مساعدة عاجلة</a></li>
+                        <li><a href="troubleshooting.html#contact-support">تواصل معنا</a></li>
+                        <li><a href="index.html#faq">أسئلة شائعة</a></li>
+                        <li><a href="#" onclick="requestTraining()">طلب تدريب</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>معلومات النظام</h3>
+                    <p>نظام إدارة المركز التعليمي v2.0</p>
+                    <p>مصمم خصيصاً للبيئة التعليمية العربية</p>
+                    <p>آخر تحديث: ديسمبر 2024</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 نظام إدارة المركز التعليمي. جميع الحقوق محفوظة.</p>
+                <p>تم إنشاء هذا النظام بـ <i class="fas fa-heart" style="color: #ef4444;"></i> للمجتمع التعليمي العربي</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-search"></i> البحث السريع</h2>
+                <button class="modal-close" onclick="closeSearchModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="globalSearchInput" placeholder="ابحث في جميع الأدلة..." 
+                           style="width: 100%; padding: 12px; border: 2px solid var(--primary-color); 
+                                  border-radius: 8px; font-size: 16px;">
+                </div>
+                
+                <div id="searchResults" style="max-height: 400px; overflow-y: auto;">
+                    <p style="text-align: center; color: var(--text-secondary); padding: 40px;">
+                        أدخل كلمة البحث للعثور على المحتوى المطلوب
+                    </p>
+                </div>
+                
+                <div style="margin-top: 20px; text-align: center;">
+                    <p style="color: var(--text-secondary); font-size: 14px;">
+                        💡 نصيحة: استخدم كلمات مفتاحية بسيطة للحصول على أفضل النتائج
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // البحث السريع
+        function performQuickSearch() {
+            document.getElementById('searchModal').classList.add('active');
+            document.getElementById('globalSearchInput').focus();
+        }
+
+        function closeSearchModal() {
+            document.getElementById('searchModal').classList.remove('active');
+        }
+
+        // البحث في المحتوى
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('globalSearchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.trim();
+                    if (query.length >= 2) {
+                        performGlobalSearch(query);
+                    } else {
+                        clearSearchResults();
+                    }
+                });
+            }
+        });
+
+        function performGlobalSearch(query) {
+            const results = [];
+            
+            // بيانات البحث المحاكاة
+            const searchData = [
+                { title: 'إضافة طالب جديد', url: 'modules.html#students-module', type: 'موديول', description: 'تعلم كيفية تسجيل طالب جديد في النظام' },
+                { title: 'تسجيل الحضور', url: 'modules.html#attendance-module', type: 'موديول', description: 'طريقة تسجيل حضور الطلاب اليومي' },
+                { title: 'إدارة المدفوعات', url: 'modules.html#payments-module', type: 'موديول', description: 'نظام إدارة مدفوعات الطلاب والرسوم' },
+                { title: 'مشاكل تسجيل الدخول', url: 'troubleshooting.html#login-issues', type: 'مساعدة', description: 'حلول لمشاكل الدخول ونسيان كلمة المرور' },
+                { title: 'إعداد الواتساب', url: 'modules.html#whatsapp-module', type: 'موديول', description: 'ربط النظام بالواتساب لإرسال التقارير' },
+                { title: 'طباعة البطاقات', url: 'modules.html#cards-module', type: 'موديول', description: 'إنشاء وطباعة البطاقات الطلابية' },
+                { title: 'الأسئلة الشائعة', url: 'index.html#faq', type: 'مساعدة', description: 'إجابات للأسئلة الأكثر شيوعاً' },
+                { title: 'التقارير المالية', url: 'modules.html#reports-module', type: 'موديول', description: 'إنشاء تقارير مالية وإحصائيات' }
+            ];
+            
+            // البحث في البيانات
+            searchData.forEach(item => {
+                if (item.title.toLowerCase().includes(query.toLowerCase()) || 
+                    item.description.toLowerCase().includes(query.toLowerCase())) {
+                    results.push(item);
+                }
+            });
+            
+            displaySearchResults(results, query);
+        }
+
+        function displaySearchResults(results, query) {
+            const container = document.getElementById('searchResults');
+            
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px;">
+                        <i class="fas fa-search" style="font-size: 48px; color: var(--text-secondary); margin-bottom: 20px;"></i>
+                        <h3 style="color: var(--text-primary);">لم يتم العثور على نتائج</h3>
+                        <p style="color: var(--text-secondary);">جرب كلمات مفتاحية مختلفة</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const resultsHTML = results.map(result => `
+                <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s;"
+                     onclick="window.open('${result.url}', '_blank')"
+                     onmouseover="this.style.backgroundColor='var(--bg-tertiary)'"
+                     onmouseout="this.style.backgroundColor='transparent'">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                        <h4 style="margin: 0; color: var(--primary-color);">${result.title}</h4>
+                        <span style="background: var(--primary-color); color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px;">
+                            ${result.type}
+                        </span>
+                    </div>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 14px;">${result.description}</p>
+                </div>
+            `).join('');
+            
+            container.innerHTML = `
+                <div style="margin-bottom: 15px; color: var(--text-primary);">
+                    <strong>تم العثور على ${results.length} نتيجة لـ "${query}"</strong>
+                </div>
+                ${resultsHTML}
+            `;
+        }
+
+        function clearSearchResults() {
+            document.getElementById('searchResults').innerHTML = `
+                <p style="text-align: center; color: var(--text-secondary); padding: 40px;">
+                    أدخل كلمة البحث للعثور على المحتوى المطلوب
+                </p>
+            `;
+        }
+
+        // خيارات الطباعة
+        function showPrintOptions() {
+            const options = [
+                { name: 'الدليل الأساسي الكامل', url: 'index.html' },
+                { name: 'دليل الموديولات', url: 'modules.html' },
+                { name: 'دليل حل المشاكل', url: 'troubleshooting.html' },
+                { name: 'الوثائق التقنية', url: 'README.md' }
+            ];
+            
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2><i class="fas fa-print"></i> خيارات الطباعة</h2>
+                        <button class="modal-close" onclick="this.closest('.modal').remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p style="margin-bottom: 20px; color: var(--text-secondary);">
+                            اختر الدليل الذي تريد طباعته:
+                        </p>
+                        ${options.map(option => `
+                            <div style="border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s;"
+                                 onclick="window.open('${option.url}', '_blank'); this.closest('.modal').remove()"
+                                 onmouseover="this.style.backgroundColor='var(--bg-tertiary)'"
+                                 onmouseout="this.style.backgroundColor='transparent'">
+                                <i class="fas fa-file-pdf" style="color: var(--primary-color); margin-left: 10px;"></i>
+                                ${option.name}
+                            </div>
+                        `).join('')}
+                        
+                        <div style="background: var(--bg-tertiary); padding: 15px; border-radius: 8px; margin-top: 20px;">
+                            <h4 style="color: var(--text-primary); margin-bottom: 10px;">
+                                <i class="fas fa-info-circle"></i> نصائح للطباعة
+                            </h4>
+                            <ul style="color: var(--text-secondary); padding-right: 20px; font-size: 14px;">
+                                <li>استخدم متصفح Chrome أو Firefox للحصول على أفضل جودة</li>
+                                <li>اختر "Save as PDF" لحفظ نسخة رقمية</li>
+                                <li>تأكد من تفعيل "Background graphics" لطباعة الألوان</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 100);
+        }
+
+        // طلب تدريب
+        function requestTraining() {
+            alert('ميزة طلب التدريب ستكون متاحة قريباً!\n\nللحصول على تدريب، يرجى التواصل مع فريق الدعم الفني.');
+        }
+
+        // إغلاق المودال عند الضغط خارجه
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.classList.remove('active');
+                setTimeout(() => {
+                    if (e.target.id !== 'searchModal') {
+                        e.target.remove();
+                    }
+                }, 300);
+            }
+        });
+
+        // إغلاق المودال بمفتاح Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModals = document.querySelectorAll('.modal.active');
+                activeModals.forEach(modal => {
+                    modal.classList.remove('active');
+                    setTimeout(() => {
+                        if (modal.id !== 'searchModal') {
+                            modal.remove();
+                        }
+                    }, 300);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
